@@ -1,0 +1,14 @@
+{
+  "name": "veloop-rewards-workspace",
+  "version": "1.0.0",
+  "description": "Full-Stack User Profile & Admin Management System for VELoop Rewards",
+  "private": true,
+  "scripts": {
+    "start": "npm run start --prefix backend",
+    "backend": "npm run dev --prefix backend",
+    "frontend": "npm run dev --prefix frontend",
+    "seed": "npm run seed --prefix backend",
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "build": "npm run build --prefix frontend"
+  }
+}

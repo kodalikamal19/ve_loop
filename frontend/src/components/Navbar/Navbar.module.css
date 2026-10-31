@@ -1,0 +1,138 @@
+.navHeader {
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  transition: all var(--transition-normal);
+}
+
+.brandLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--text-primary);
+}
+
+.brandIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.brandTag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  padding: 3px 8px;
+  border-radius: 20px;
+  margin-left: 6px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.navLinkActive {
+  color: #4f46e5 !important;
+  background: var(--badge-bg);
+}
+
+.themeToggle {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.themeToggle:hover {
+  transform: rotate(15deg) scale(1.05);
+  background: var(--border-subtle);
+}
+
+.userBadge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 10px 4px 4px;
+  border-radius: 30px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.avatarMini {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #6366f1;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+.userName {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.logoutBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoutBtn:hover {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
