@@ -142,6 +142,7 @@ export const getProfileMe = async (req, res, next) => {
         badgeIcon: levelProgress.badgeIcon,
         badgeColor: levelProgress.badgeColor,
         isMaxLevel: levelProgress.isMaxLevel,
+        allLevels: levelProgress.allLevels || [],
       },
       achievementsSummary: {
         unlockedCount: unlockedAchievementsCount,

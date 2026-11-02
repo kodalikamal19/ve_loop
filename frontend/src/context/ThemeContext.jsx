@@ -3,9 +3,11 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  // Default to 'light' per user explicit request, or stored preference
+  // Default to 'dark' per user request for unified premium dark theme
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('veloop_theme') || 'light';
+    const saved = localStorage.getItem('veloop_theme');
+    if (saved === 'light') return 'dark';
+    return saved || 'dark';
   });
 
   useEffect(() => {

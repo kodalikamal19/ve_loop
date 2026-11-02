@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import UserProfile from './pages/UserProfile/UserProfile';
+import LevelPage from './pages/Levels/LevelPage';
 import Login from './pages/Login/Login';
 import AdminLogin from './pages/Admin/AdminLogin';
 import AdminDashboard from './pages/Admin/AdminDashboard';
@@ -23,6 +24,14 @@ export const App = () => {
             element={
               <ProtectedRoute>
                 <UserProfile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/levels"
+            element={
+              <ProtectedRoute>
+                <LevelPage />
               </ProtectedRoute>
             }
           />
@@ -67,9 +76,9 @@ export const App = () => {
       <footer
         className="py-3 text-center border-top small"
         style={{
-          background: 'var(--bg-card)',
-          borderColor: 'var(--border-subtle)',
-          color: 'var(--text-muted)',
+          background: 'rgba(12, 14, 26, 0.95)',
+          borderColor: 'rgba(255, 255, 255, 0.08)',
+          color: '#8492a6',
         }}
       >
         <div className="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">

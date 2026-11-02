@@ -57,6 +57,19 @@ export const calculateLevelProgress = async (currentXp) => {
     badgeIcon: currentLevelObj.badgeIcon,
     badgeColor: currentLevelObj.badgeColor,
     isMaxLevel,
+    allLevels: levels.map((lvl) => ({
+      level: lvl.level,
+      name: lvl.name,
+      xpThreshold: lvl.xpThreshold,
+      badgeIcon: lvl.badgeIcon,
+      badgeColor: lvl.badgeColor,
+      benefits: lvl.benefits && lvl.benefits.length > 0 ? lvl.benefits : [
+        `Base multiplier: ${(1 + lvl.level * 0.1).toFixed(1)}x`,
+        'Access to tiered reward drops'
+      ],
+      bonusMultiplier: lvl.bonusMultiplier || Number((1 + lvl.level * 0.1).toFixed(1)),
+      displayOrder: lvl.displayOrder || lvl.level,
+    })),
   };
 };
 

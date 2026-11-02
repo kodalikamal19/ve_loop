@@ -114,13 +114,13 @@ export const AdminDashboard = () => {
         <Link to="/admin/dashboard" className="btn btn-sm btn-primary rounded-pill px-3 fw-semibold">
           Dashboard Overview
         </Link>
-        <Link to="/admin/users" className="btn btn-sm btn-light border rounded-pill px-3">
+        <Link to="/admin/users" className="btn btn-sm btn-outline-secondary rounded-pill px-3">
           User Management
         </Link>
-        <Link to="/admin/withdrawals" className="btn btn-sm btn-light border rounded-pill px-3">
+        <Link to="/admin/withdrawals" className="btn btn-sm btn-outline-secondary rounded-pill px-3">
           Withdrawal Requests ({withdrawals?.pending || 0})
         </Link>
-        <Link to="/admin/audit-logs" className="btn btn-sm btn-light border rounded-pill px-3">
+        <Link to="/admin/audit-logs" className="btn btn-sm btn-outline-secondary rounded-pill px-3">
           Security Audit Logs
         </Link>
       </div>

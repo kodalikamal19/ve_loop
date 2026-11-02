@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Copy, Edit3, Shield, Award, CheckCircle2 } from 'lucide-react';
 import { useToast } from '../../context/ToastContext';
+import LevelBadge from '../Badges/LevelBadge';
 import styles from './ProfileHero.module.css';
 
 export const ProfileHero = ({ profile, levelProgress, onEditProfile }) => {
@@ -94,13 +96,25 @@ export const ProfileHero = ({ profile, levelProgress, onEditProfile }) => {
         </div>
 
         {/* Right: Gamified Level Progression Widget */}
-        <div className={styles.xpProgressionCard}>
-          <div className={styles.levelTitleRow}>
-            <span className={styles.levelTag}>Current Tier</span>
-            <span className={styles.levelName}>
-              <Award size={18} color="#8b5cf6" />
-              Level {String(currentLevel).padStart(2, '0')} — {currentLevelName}
-            </span>
+        <Link to="/levels" className={styles.xpProgressionCard} style={{ textDecoration: 'none' }}>
+          <div className="d-flex align-items-center gap-3 mb-2">
+            <LevelBadge
+              level={currentLevel}
+              status="active"
+              size="sm"
+              interactive={false}
+            />
+            <div className="flex-grow-1">
+              <div className={styles.levelTitleRow} style={{ marginBottom: 2 }}>
+                <span className={styles.levelTag}>Current Tier</span>
+                <span className="badge bg-primary-subtle text-primary border border-primary-subtle small py-0 px-2">
+                  View Roadmap →
+                </span>
+              </div>
+              <div className={styles.levelName}>
+                Level {String(currentLevel).padStart(2, '0')} — {currentLevelName}
+              </div>
+            </div>
           </div>
 
           <div className={styles.progressBarContainer}>
@@ -126,7 +140,7 @@ export const ProfileHero = ({ profile, levelProgress, onEditProfile }) => {
               )}
             </span>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );

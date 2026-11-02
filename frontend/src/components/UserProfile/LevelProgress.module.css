@@ -1,10 +1,32 @@
+/* LevelProgress.module.css - Redesigned Ultra-Premium Dark Theme */
+
 .levelCard {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  box-shadow: var(--card-shadow);
+  background: linear-gradient(135deg, #13172c 0%, #171b35 100%);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: var(--radius-lg, 20px);
+  padding: 28px 24px;
+  box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.6), 0 0 30px rgba(99, 102, 241, 0.12);
   margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.levelCard:hover {
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7), 0 0 40px rgba(99, 102, 241, 0.2);
+}
+
+.cardGlowOrb {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
 }
 
 .levelHeader {
@@ -12,56 +34,135 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
 }
 
-.levelBadgeLarge {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+.levelHeaderLeft {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: white;
-  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+  gap: 18px;
+}
+
+.levelBadgeWrap {
+  flex-shrink: 0;
 }
 
 .levelDetails {
   flex: 1;
-  margin-left: 18px;
 }
 
 .levelSubtitle {
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #6366f1;
+  letter-spacing: 0.1em;
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
 }
 
 .levelTitle {
-  font-size: 1.4rem;
+  font-size: 1.55rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: #ffffff;
   margin: 0;
+  letter-spacing: -0.01em;
 }
 
+.levelTitleGradient {
+  background: linear-gradient(135deg, #ffffff 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Progress Track with animated gradient fill & shimmer */
 .progressTrack {
-  height: 12px;
-  background-color: var(--bg-secondary);
-  border-radius: 12px;
+  height: 14px;
+  background-color: rgba(15, 23, 42, 0.85);
+  border-radius: 14px;
   overflow: hidden;
-  margin: 16px 0 10px 0;
+  margin: 18px 0 10px 0;
   position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .progressFill {
   height: 100%;
-  background: linear-gradient(90deg, #6366f1 0%, #ec4899 100%);
-  border-radius: 12px;
-  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+  background: linear-gradient(90deg, #6366f1 0%, #38bdf8 50%, #ec4899 100%);
+  border-radius: 14px;
+  position: relative;
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 14px rgba(99, 102, 241, 0.55);
 }
 
+.progressShimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  animation: shimmerAnim 2.4s infinite linear;
+}
+
+@keyframes shimmerAnim {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* 5-node tier checkpoints bar */
+.tierRoadmapBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 16px;
+  padding: 14px 18px;
+  background: rgba(18, 22, 40, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  position: relative;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tierRoadmapBar::-webkit-scrollbar {
+  display: none;
+}
+
+.tierNodeItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 60px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.tierNodeItem:hover {
+  transform: translateY(-2px);
+}
+
+.tierNodeLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+.tierNodeActive .tierNodeLabel {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+/* Stats Breakdown Grid */
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -76,34 +177,77 @@
 }
 
 .statItem {
-  background: var(--bg-secondary);
-  border-radius: var(--radius-sm);
-  padding: 12px;
+  background: rgba(22, 26, 48, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 12px 14px;
   display: flex;
   flex-direction: column;
+  transition: border-color 0.2s ease;
+}
+
+.statItem:hover {
+  border-color: rgba(99, 102, 241, 0.35);
 }
 
 .statLabel {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  font-weight: 600;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .statValue {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
   margin-top: 2px;
 }
 
+/* Next Level Preview Bar */
 .nextLevelPreview {
   margin-top: 18px;
-  padding: 12px 16px;
-  border-radius: var(--radius-sm);
-  background: var(--bg-secondary);
-  border-left: 3px solid #8b5cf6;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(22, 26, 48, 0.75);
+  border-left: 4px solid #a855f7;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
+  color: #e2e8f0;
+}
+
+@media (max-width: 576px) {
+  .nextLevelPreview {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+.viewAllTiersBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(168, 85, 247, 0.25) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  color: #a5b4fc;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.viewAllTiersBtn:hover {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
 }

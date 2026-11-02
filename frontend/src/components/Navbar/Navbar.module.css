@@ -1,10 +1,14 @@
+/* Navbar.module.css - Ultra Premium Dark Theme */
+
 .navHeader {
-  background-color: var(--bg-card);
-  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(12, 14, 26, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
   transition: all var(--transition-normal);
 }
 
@@ -16,7 +20,7 @@
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 1.35rem;
-  color: var(--text-primary);
+  color: #ffffff;
 }
 
 .brandIcon {
@@ -28,7 +32,8 @@
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .brandTag {
@@ -36,8 +41,9 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  background: var(--badge-bg);
-  color: var(--badge-text);
+  background: rgba(99, 102, 241, 0.25);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.4);
   padding: 3px 8px;
   border-radius: 20px;
   margin-left: 6px;
@@ -46,36 +52,39 @@
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .navLink {
-  color: var(--text-secondary);
+  color: #94a3b8;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   padding: 8px 14px;
-  border-radius: var(--radius-sm);
-  transition: all var(--transition-fast);
+  border-radius: 12px;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  border: 1px solid transparent;
 }
 
 .navLink:hover {
-  color: var(--text-primary);
-  background: var(--bg-secondary);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .navLinkActive {
-  color: #4f46e5 !important;
-  background: var(--badge-bg);
+  color: #ffffff !important;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(168, 85, 247, 0.25) 100%) !important;
+  border-color: rgba(99, 102, 241, 0.45) !important;
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.25);
 }
 
 .themeToggle {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
   width: 38px;
   height: 38px;
   border-radius: 50%;
@@ -83,12 +92,13 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all var(--transition-normal);
+  transition: all 0.25s ease;
 }
 
 .themeToggle:hover {
-  transform: rotate(15deg) scale(1.05);
-  background: var(--border-subtle);
+  transform: rotate(15deg) scale(1.06);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
 }
 
 .userBadge {
@@ -97,42 +107,46 @@
   gap: 10px;
   padding: 4px 10px 4px 4px;
   border-radius: 30px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-subtle);
+  background: rgba(22, 26, 48, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .avatarMini {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: #6366f1;
+  background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   overflow: hidden;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .userName {
   font-size: 0.86rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #f8fafc;
 }
 
 .logoutBtn {
   background: none;
   border: none;
-  color: var(--text-muted);
+  color: #94a3b8;
   padding: 6px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease;
 }
 
 .logoutBtn:hover {
   color: #ef4444;
-  background: rgba(239, 68, 68, 0.1);
+  background: rgba(239, 68, 68, 0.15);
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { Sun, Moon, ShieldCheck, LogOut, User, Gift } from 'lucide-react';
+import { Sun, Moon, ShieldCheck, LogOut, User, Gift, Crown } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useTheme } from '../../context/ThemeContext';
 import styles from './Navbar.module.css';
@@ -35,6 +35,16 @@ export const Navbar = () => {
           >
             <User size={16} />
             <span className="d-none d-sm-inline">Profile Command</span>
+          </NavLink>
+
+          <NavLink
+            to="/levels"
+            className={({ isActive }) =>
+              `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`
+            }
+          >
+            <Crown size={16} color="#fbbf24" />
+            <span className="d-none d-sm-inline">Tiers & Levels</span>
           </NavLink>
 
           <NavLink

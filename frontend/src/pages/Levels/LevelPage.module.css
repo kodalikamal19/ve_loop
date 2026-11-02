@@ -1,0 +1,667 @@
+/* ==========================================================================
+   Level Page Styles - Ultra-Premium Dark Theme for VELoop Rewards
+   ========================================================================== */
+
+.pageWrapper {
+  min-height: 100vh;
+  background-color: #0c0e1a;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 90% 40%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 10% 70%, rgba(56, 189, 248, 0.08) 0%, transparent 50%);
+  color: #f8fafc;
+  padding-bottom: 60px;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   1. Hero Banner Section
+   ========================================================================== */
+
+.heroSection {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  margin-top: 24px;
+  margin-bottom: 36px;
+  background: #121526;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.7);
+}
+
+.heroBackdrop {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/levels_hero_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.28;
+  filter: saturate(1.2);
+  pointer-events: none;
+}
+
+.heroGradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(12, 14, 26, 0.95) 0%,
+    rgba(18, 21, 38, 0.82) 40%,
+    rgba(22, 24, 45, 0.92) 100%
+  );
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  padding: 40px 36px;
+}
+
+.heroRow {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+@media (max-width: 991px) {
+  .heroRow {
+    flex-direction: column;
+    text-align: center;
+    gap: 28px;
+  }
+}
+
+.heroBadgeCol {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroInfoCol {
+  flex: 1;
+  width: 100%;
+}
+
+.prestigeTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(99, 102, 241, 0.16);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  color: #a5b4fc;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.heroTitle {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.heroTitleGradient {
+  background: linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+  font-size: 1.02rem;
+  color: #94a3b8;
+  max-width: 620px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 991px) {
+  .heroSubtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Progress bar container */
+.heroProgressBlock {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 20px 24px;
+  backdrop-filter: blur(10px);
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.progressTrackMaster {
+  position: relative;
+  height: 16px;
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.progressFillMaster {
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #6366f1 0%, #38bdf8 50%, #ec4899 100%);
+  position: relative;
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.6);
+}
+
+.progressShimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmerMaster 2.4s infinite linear;
+}
+
+@keyframes shimmerMaster {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.progressMilestoneMarks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 0.74rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* Hero Stats Row */
+.heroStatsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+
+@media (max-width: 767px) {
+  .heroStatsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.heroStatCard {
+  background: rgba(18, 22, 40, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 12px 14px;
+  text-align: left;
+}
+
+.statCardLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+.statCardValue {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   2. Navigation View Tabs
+   ========================================================================== */
+
+.viewTabsNav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding: 6px;
+  background: rgba(18, 21, 38, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.viewTabsNav::-webkit-scrollbar {
+  display: none;
+}
+
+.viewTabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #94a3b8;
+  background: transparent;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.viewTabBtn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.viewTabBtnActive {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(168, 85, 247, 0.25) 100%);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   3. Interactive Connected Roadmap
+   ========================================================================== */
+
+.roadmapSection {
+  background: #111425;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: 32px 28px;
+  margin-bottom: 32px;
+  box-shadow: 0 16px 48px -8px rgba(0, 0, 0, 0.5);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 28px;
+}
+
+.sectionTitle {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.sectionDesc {
+  font-size: 0.86rem;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.roadmapContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+@media (max-width: 991px) {
+  .roadmapContainer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.roadmapCard {
+  position: relative;
+  background: rgba(22, 26, 48, 0.7);
+  border: 1px solid var(--tier-border, rgba(255, 255, 255, 0.08));
+  border-radius: 20px;
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.roadmapCard:hover {
+  transform: translateY(-8px);
+  border-color: var(--tier-color, #6366f1);
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.6), 0 0 24px var(--tier-glow, rgba(99, 102, 241, 0.35));
+}
+
+.roadmapCardActive {
+  background: linear-gradient(180deg, rgba(31, 37, 68, 0.9) 0%, rgba(20, 24, 45, 0.9) 100%);
+  border-color: var(--tier-color, #6366f1);
+  box-shadow: 0 0 30px var(--tier-glow, rgba(99, 102, 241, 0.4));
+}
+
+.roadmapCardCompleted {
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.roadmapCardLocked {
+  opacity: 0.72;
+  filter: grayscale(0.2);
+}
+
+.roadmapCardLocked:hover {
+  opacity: 1;
+  filter: none;
+}
+
+.roadmapTierPill {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--tier-color, #94a3b8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.roadmapBadgeWrap {
+  margin: 12px 0 20px;
+  min-height: 136px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.roadmapTierName {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.roadmapXpThreshold {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.roadmapMultiplierBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  margin-bottom: 12px;
+}
+
+.roadmapPerkSummary {
+  font-size: 0.76rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+  min-height: 40px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.roadmapInspectBtn {
+  margin-top: 14px;
+  width: 100%;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  transition: all 0.2s ease;
+}
+
+.roadmapInspectBtn:hover {
+  background: var(--tier-color, #6366f1);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+/* ==========================================================================
+   4. Tier Comparison Table
+   ========================================================================== */
+
+.comparisonSection {
+  background: #111425;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: 32px 28px;
+  margin-bottom: 32px;
+  overflow-x: auto;
+}
+
+.comparisonTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.88rem;
+}
+
+.comparisonTable th {
+  padding: 16px 14px;
+  background: rgba(20, 24, 44, 0.85);
+  color: #94a3b8;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.comparisonTable td {
+  padding: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+}
+
+.comparisonTable tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tableActiveColumn {
+  background: rgba(99, 102, 241, 0.08) !important;
+}
+
+/* ==========================================================================
+   5. Interactive XP Simulator & Calculator
+   ========================================================================== */
+
+.simulatorCard {
+  background: linear-gradient(135deg, #13172c 0%, #171b34 100%);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 24px;
+  padding: 32px 28px;
+  margin-bottom: 32px;
+  box-shadow: 0 16px 48px -8px rgba(0, 0, 0, 0.5);
+}
+
+.simulatorSliderTrack {
+  margin: 28px 0;
+}
+
+.sliderInput {
+  width: 100%;
+  height: 10px;
+  border-radius: 8px;
+  background: #1e2444;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  accent-color: #6366f1;
+}
+
+.sliderInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8 0%, #ec4899 100%);
+  cursor: pointer;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.8);
+  border: 2px solid #ffffff;
+}
+
+.simulatorResultGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+@media (max-width: 767px) {
+  .simulatorResultGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.simResultBox {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   6. "Earn XP Fast" Action Center
+   ========================================================================== */
+
+.earnXpSection {
+  margin-bottom: 32px;
+}
+
+.earnXpGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+
+@media (max-width: 991px) {
+  .earnXpGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .earnXpGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.earnXpCard {
+  background: #121526;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.25s ease;
+}
+
+.earnXpCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.5);
+}
+
+.earnXpIconBox {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.earnXpTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.earnXpRewardBadge {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.14);
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.earnXpDesc {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.earnXpActionBtn {
+  width: 100%;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  color: #a5b4fc;
+  transition: all 0.2s ease;
+}
+
+.earnXpActionBtn:hover {
+  background: #6366f1;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Responsive Utilities
+   ========================================================================== */
+
+@media (max-width: 576px) {
+  .heroContent {
+    padding: 28px 18px;
+  }
+  .heroTitle {
+    font-size: 1.65rem;
+  }
+  .roadmapSection,
+  .comparisonSection,
+  .simulatorCard {
+    padding: 24px 16px;
+  }
+}
